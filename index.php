@@ -8,8 +8,13 @@
 <body>
 	<?php session_start(); ?>
 
-	<h1>Fill in the input fields below</h1>
-	
+	<?php
+	if(isset($_SESSION['message'])) {
+		echo "<p style='color: red;'>" . $_SESSION['message'] . "</p>";
+		unset($_SESSION['message']);
+	}
+	?>
+
 	<h2>
 		User logged in:
 		<?php
